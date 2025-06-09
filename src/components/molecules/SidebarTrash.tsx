@@ -1,15 +1,15 @@
 import { Link as RouterLink } from 'react-router-dom';
-import styles from './SidebarRecentlyUsedFiles.module.css';
+import styles from './SidebarTrash.module.css';
 
-type SidebarRecentlyUsedFilesProps = {
+type SidebarTrashProps = {
     name: string;
     path: string;
     onClick?: () => void;
 };
 
-export const SidebarRecentlyUsedFiles = ({ name, path, onClick }: SidebarRecentlyUsedFilesProps) => {
+export const SidebarTrash = ({ name, path, onClick }: SidebarTrashProps) => {
     return (
-        <div className={styles.recentlyUsedFiles}>
+        <div className={styles.trash}>
             <RouterLink to={path} onClick={onClick}>
                 {name}
             </RouterLink>

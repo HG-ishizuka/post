@@ -7,6 +7,7 @@ import { SidebarUsageVolume } from '../../components/molecules/SidebarUsageVolum
 import { SidebarFooter } from '../../components/molecules/SidebarFooter';
 import { useSidebarToggle } from '../hooks/useSidebarToggle';
 import { useSidebarGroupMenu } from '../hooks/useSidebarGroupMenu';
+import { SidebarTrash } from '../../components/molecules/SidebarTrash'
 import styles from './Sidebar.module.css';
 
 export const Sidebar = () => {
@@ -23,7 +24,7 @@ export const Sidebar = () => {
             <div className={`${styles.content} ${isCollapse ? styles.hideOnCollapse : ''}`}>
 
                 <SidebarHeader companyName={companyName} />
-                <SidebarRecentlyUsedFiles name="最近使ったファイル" path="/recent" />
+                <SidebarRecentlyUsedFiles name="最近使ったファイル" path="/recent"/>
 
                 {/* sidebarDataのグループリストをループして、SidebarGroupを表示 */}
                 {sidebarGroupListData.map((group, index) => (
@@ -31,6 +32,7 @@ export const Sidebar = () => {
                     <SidebarGroupList key={group.name} {...group} isOpen={openState.has(index)} onToggle={() => toggleGroup(index)} openMenuIndex={openMenuIndex} handleToggleMenu={handleToggleMenu} />
                 ))}
 
+                <SidebarTrash name="ゴミ箱" path="/trash" />
                 <SidebarUsageVolume usage='XXMB' />                
 
             </div>
