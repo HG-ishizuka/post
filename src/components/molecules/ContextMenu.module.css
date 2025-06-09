@@ -1,0 +1,27 @@
+.menuContainer {
+    position: fixed; /* ← ここ！ */
+    top: 260px; /* or right, 調整 */
+    z-index: 9999;
+    background-color: white;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+/* ボタンのスタイル */
+.menuItem {
+    padding: 12px 16px;
+    text-align: left;
+    background: none;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.menuItem:hover {
+    background-color: #f0f0f0;
+}

@@ -6,6 +6,7 @@ import { useSidebarGroup } from '../hooks/useSidebarGroup';
 import { SidebarUsageVolume } from '../../components/molecules/SidebarUsageVolume';
 import { SidebarFooter } from '../../components/molecules/SidebarFooter';
 import { useSidebarToggle } from '../hooks/useSidebarToggle';
+import { useSidebarGroupMenu } from '../hooks/useSidebarGroupMenu';
 import styles from './Sidebar.module.css';
 
 export const Sidebar = () => {
@@ -14,6 +15,8 @@ export const Sidebar = () => {
     const { openState, toggleGroup } = useSidebarGroup(); 
     // useSidebarToggleフックで、折りたたみ状態を切り替える関数を取得
     const { isCollapse, toggleSidebar } = useSidebarToggle();
+
+    const { openMenuIndex, handleToggleMenu } = useSidebarGroupMenu();
 
     return (
         <div className={`${styles.wrapper} ${isCollapse ? styles.collapse : ''}`}>
@@ -25,7 +28,7 @@ export const Sidebar = () => {
                 {/* sidebarDataのグループリストをループして、SidebarGroupを表示 */}
                 {sidebarGroupListData.map((group, index) => (
                     // グループデータと開閉状態、切り替え操作をまとめて渡している。
-                    <SidebarGroupList key={group.name} {...group} isOpen={openState.has(index)} onToggle={() => toggleGroup(index)}/>
+                    <SidebarGroupList key={group.name} {...group} isOpen={openState.has(index)} onToggle={() => toggleGroup(index)} openMenuIndex={openMenuIndex} handleToggleMenu={handleToggleMenu} />
                 ))}
 
                 <SidebarUsageVolume usage='XXMB' />                
