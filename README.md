@@ -52,4 +52,4 @@ export default tseslint.config({
   },
 })
 ```
-![1749438240501](image/README/1749438240501.png)
+![1749438960597](image/README/1749438960597.png)
