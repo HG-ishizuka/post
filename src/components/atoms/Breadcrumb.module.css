@@ -1,0 +1,18 @@
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.group {
+    font-weight: normal;
+}
+
+.separator {
+    margin: 0 8px;
+}
+
+.department {
+    font-weight: bold;
+}

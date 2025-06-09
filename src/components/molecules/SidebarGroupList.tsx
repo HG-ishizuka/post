@@ -37,7 +37,10 @@ export const SidebarGroupList = ({
             <div className={`${styles.links} ${isOpen ? styles.linksOpen : ''}`}>
                 {links.map((link, index) => (
                     <div key={link.path} className={styles.linkRow}>
-                        <Link to={link.path} className={styles.link} onClick={() => onSelect(name, link.name)}>
+                        <Link to={link.path} className={styles.link} 
+                            onClick={(e) => {
+                                e.preventDefault();
+                                onSelect(name, link.name)}}>
                             <span>{link.name}</span>
                         </Link>
                         <div className={styles.menuContainer}>

@@ -4,7 +4,7 @@ export const sidebarGroupListData: SidebarGroupList[] = [
     {
         name: '一般キャビネット',
         links: [
-            { name: '営業部', path: '/#' },
+            { name: '営業部', path: '/home' },
             { name: '経理部', path: '/#' },
             { name: '総務部', path: '/#' },
         ],
