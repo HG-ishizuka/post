@@ -53,3 +53,17 @@ export default tseslint.config({
 })
 ```
 ![1749438960597](image/README/1749438960597.png)
+
+
+jest
+ts-node
+@swc/core 
+@swc/jest 
+@types/jest
+@testing-library/react 
+@testing-library/jest-dom
+
+jest-environment-jsdom
+
+
+jest.config.ts
